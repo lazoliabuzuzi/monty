@@ -15,9 +15,14 @@ void pop(stack_t **stack, unsigned int line_number)
 		_free();
 		exit(EXIT_FAILURE);
 	}
-
+	if (glo.args[1] != NULL)
+	{
+	        _free();
+		exit(EXIT_FAILURE);
+	}
 	tmp = *stack;
 	*stack = tmp->next;
+
 	if (tmp->next)
 		tmp->next->prev = NULL;
 	free(tmp);
