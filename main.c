@@ -1,0 +1,40 @@
+#include "monty.h"
+/**
+ * main - entry point
+ * @ac: number of arguments in CLI
+ * @av: array of arguments
+ * Return: 0 success
+ */
+variables glo;
+
+int main(int ac, char **av)
+{
+
+	if (ac != 2)
+		error(av[1], 1);
+
+	init_glo(&glo);
+
+	glo.monty = fopen(av[1], "r");
+	if (glo.monty == NULL)
+		error(av[1], 2);
+
+	while (1)
+	{
+		get_opcode();
+		glo.line_number++;
+		if (strncmp(glo.instrct, "#", 1) == 0)
+			       continue;	
+		if (glo.instrct == NULL)
+		{
+			break;
+		}
+		arg_sep();
+
+		if (glo.args[0] == NULL)
+			continue;
+		opcode_parser(&glo);
+	}
+	_free();
+	return (0);
+}
