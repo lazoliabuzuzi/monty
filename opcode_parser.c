@@ -14,6 +14,7 @@ void opcode_parser(variables *glo)
 		{"pint", pint},
 		{"nop", nop},
 		{"pop", pop},
+		{"add", add},
 		{NULL, NULL}
 	};
 

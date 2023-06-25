@@ -31,9 +31,15 @@ void error(char *av1, int a)
 		_free();
 		exit(EXIT_FAILURE);
 	}
-	else
+	else if (a == 5)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", glo.line_number);
+		_free();
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		fprintf(stderr, "L%u: can't add, stack too short\n", glo.line_number);
 		_free();
 		exit(EXIT_FAILURE);
 	}
