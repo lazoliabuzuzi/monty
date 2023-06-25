@@ -24,14 +24,13 @@ int main(int ac, char **av)
 		get_opcode();
 		glo.line_number++;
 
-		if (strncmp(glo.instrct, "#", 1) == 0)
-			continue;
-
 		if (glo.instrct == NULL)
 			break;
 
 		arg_sep();
 
+		if (strncmp(glo.args[0], "#", 1) == 0)
+			continue;
 		if (glo.args[0] == NULL)
 			continue;
 		opcode_parser(&glo);
