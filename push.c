@@ -9,6 +9,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new = NULL;
 
+	(void)line_number;
 	if (glo.args[1] == NULL)
 		error(NULL, 5);
 	else if (atoi(glo.args[1]) == 0 && strcmp(glo.args[1], "0") != 0)

@@ -21,7 +21,7 @@ void error(char *av1, int a)
 	else if (a == 3)
 	{
 		fprintf(stderr, "L%d: unknown instruction ", glo.line_number);
-		fprintf("%s\n", glo.args[0]);
+		fprintf(stderr, "%s\n", glo.args[0]);
 		_free();
 		exit(EXIT_FAILURE);
 	}
