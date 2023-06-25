@@ -11,7 +11,7 @@ void error(char *av1, int a)
 	else if (a == 2)
 		fprintf(stderr, "Error: Can't open file %s\n", av1);
 	else if (a == 3)
-	{	
+	{
 		fprintf(stderr, "L%u: unknown instruction ", glo.line_number);
 		fprintf(stderr, "%s\n", glo.args[0]);
 	}
@@ -21,9 +21,12 @@ void error(char *av1, int a)
 		fprintf(stderr, "L%u: usage: push integer\n", glo.line_number);
 	else if (a == 6)
 		fprintf(stderr, "L%u: can't add, stack too short\n", glo.line_number);
-	else
+	else if (a == 7)
 		fprintf(stderr, "L%u: can't swap, stack too short\n", glo.line_number);
-
+	else if (a == 8)
+		fprintf(stderr, "L%u: can't sub, stack too short\n", glo.line_number);
+	else if (a == 9)
+		fprintf(stderr, "L%u: can't div, stack too short\n", glo.line_number);
 	_free();
 	exit(EXIT_FAILURE);
 }

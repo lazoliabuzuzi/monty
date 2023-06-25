@@ -11,14 +11,14 @@ void arg_sep(void)
 
 	glo.args = malloc(sizeof(char *) * 12);
 
-	token = strtok(glo.instrct, " \n\t\r");
+	token = strtok(glo.instrct, " +;\n\t\r");
 	while (token != NULL)
 	{
 		glo.args[args_num] = token;
 		args_num++;
 		if (args_num >= 12)
 			break;
-		token = strtok(NULL, " \n\t\r");
+		token = strtok(NULL, " +;\n\t\r");
 	}
 	glo.args[args_num] = NULL;
 }

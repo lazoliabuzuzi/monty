@@ -75,6 +75,9 @@ void pop(stack_t **stack, unsigned int line_number);
 int init_glo(variables *glo);
 void add(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void divv(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
 void _free(void);
 
 #endif
