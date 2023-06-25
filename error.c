@@ -27,6 +27,10 @@ void error(char *av1, int a)
 		fprintf(stderr, "L%u: can't sub, stack too short\n", glo.line_number);
 	else if (a == 9)
 		fprintf(stderr, "L%u: can't div, stack too short\n", glo.line_number);
+	else if (a == 10)
+		fprintf(stderr, "L%u: can't mod, stack too short\n", glo.line_number);
+	else
+		fprintf(stderr, "L%u: can't mul, stack too short\n", glo.line_number);
 	_free();
 	exit(EXIT_FAILURE);
 }

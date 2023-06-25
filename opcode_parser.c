@@ -18,6 +18,8 @@ void opcode_parser(variables *glo)
 		{"swap", swap},
 		{"sub", sub},
 		{"div", divv},
+		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 
