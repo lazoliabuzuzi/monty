@@ -18,10 +18,23 @@ void error(char *av1, int a)
 		_free();
 		exit(EXIT_FAILURE);
 	}
+	else if (a == 3)
+	{
+		fprintf(stderr, "L%d: unknown instruction ", glo.line_number);
+		fprintf("%s\n", glo.args[0]);
+		_free();
+		exit(EXIT_FAILURE);
+	}
 	else if (a == 4)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		_free();
 		exit(EXIT_FAILURE);
 	}
-}	
+	else
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", glo.line_number);
+		_free();
+		exit(EXIT_FAILURE);
+	}
+}

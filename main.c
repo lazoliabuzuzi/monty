@@ -1,15 +1,15 @@
 #include "monty.h"
+
+variables glo;
+
 /**
  * main - entry point
  * @ac: number of arguments in CLI
  * @av: array of arguments
  * Return: 0 success
  */
-variables glo;
-
 int main(int ac, char **av)
 {
-
 	if (ac != 2)
 		error(av[1], 1);
 
@@ -23,12 +23,13 @@ int main(int ac, char **av)
 	{
 		get_opcode();
 		glo.line_number++;
+
 		if (strncmp(glo.instrct, "#", 1) == 0)
-			       continue;	
+			continue;
+
 		if (glo.instrct == NULL)
-		{
 			break;
-		}
+
 		arg_sep();
 
 		if (glo.args[0] == NULL)

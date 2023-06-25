@@ -14,18 +14,8 @@ void opcode_parser(variables *glo)
 		{"pint", pint},
 		{"nop", nop},
 		{"pop", pop},
-		{NULL, NULL},
-	};
-		/*
-		 * {"pall", pall},
-		{"pop", pop},
-		{"add", add},
-		{"nop", nop},
-		{"pint", pint},
-		{"swap", swap},
 		{NULL, NULL}
 	};
-	*/
 
 	for (i = 0; funcs[i].opcode != NULL; i++)
 	{
@@ -39,8 +29,6 @@ void opcode_parser(variables *glo)
 	}
 	if (flag == 1 && strncmp(glo->args[0], "#", 1) != 0)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", glo->line_number, glo->args[0]);
-		_free();
-		exit(EXIT_FAILURE);
+		error(NULL, 3);
 	}
 }

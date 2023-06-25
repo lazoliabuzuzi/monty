@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * pall - prints content of stack
+ * pint - prints head of stack
  * @stack: head of stack
  * @line_number: the line number
  */

@@ -9,11 +9,10 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new = NULL;
 
-	if (glo.args[1] == NULL || (atoi(glo.args[1]) == 0 && strcmp(glo.args[1], "0") != 0))
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+	if (glo.args[1] == NULL)
+		error(NULL, 5);
+	else if (atoi(glo.args[1]) == 0 && strcmp(glo.args[1], "0") != 0)
+		error(NULL, 5);
 
 	new = malloc(sizeof(stack_t));
 

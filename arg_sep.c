@@ -3,8 +3,6 @@
 /**
  * arg_sep - seperates the command retrieved by getline
  * into seperate arguments
- * 
- * 
  */
 void arg_sep(void)
 {
@@ -23,10 +21,4 @@ void arg_sep(void)
 		token = strtok(NULL, " \n\t\r");
 	}
 	glo.args[args_num] = NULL;
-	/*
-	 * for (i = 0; args[i] != NULL; i++)
-	{
-		printf("%s\n", args[i]);
-	}
-	*/
 }
